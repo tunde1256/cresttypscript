@@ -1,5 +1,6 @@
+// knexfile.js
 module.exports = {
-  client: 'mysql', // Use lowercase 'mysql'
+  client: 'mysql2',  // or 'pg' for PostgreSQL
   connection: {
     host: 'localhost',
     user: 'root',
@@ -7,6 +8,10 @@ module.exports = {
     database: 'crest',
   },
   migrations: {
-    directory: './src/migrations', // Path where migration files are stored
+    directory: './migrations',  // Ensure this directory exists
+    tableName: 'knex_migrations',
+  },
+  seeds: {
+    directory: './seeds',
   },
 };
